@@ -5,6 +5,8 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.Pattern;
+import com.cricket.cricket_management_system.enums.Role;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,8 +22,9 @@ public class PlayerRequest {
     @Max(value = 999, message = "Jersey number cannot exceed 999")
     private Integer jerseyNumber;
 
-    @NotBlank(message = "Role is required")
-    private String role;
+    @NotNull(message = "Role is required")
+    private Role role;
+   
 
     @NotNull(message = "Total matches is required")
     @Min(value = 0, message = "Matches cannot be negative")

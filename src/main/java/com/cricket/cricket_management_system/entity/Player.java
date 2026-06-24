@@ -2,6 +2,9 @@ package com.cricket.cricket_management_system.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import com.cricket.cricket_management_system.enums.Role;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 
 @Entity
 @Table(name = "players")
@@ -22,9 +25,9 @@ public class Player {
     @Column(nullable = false)
     private Integer jerseyNumber;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private String role;
-
+    private Role role;
     private Integer totalMatches;
 
     @Column(nullable = false)
